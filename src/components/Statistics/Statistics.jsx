@@ -1,13 +1,12 @@
 import { StatisticsList } from './StatisticsList/StatisticsList';
 import PropTypes from 'prop-types';
+import { Section } from '../Common/Section';
 
 export const Statistics = ({ title, data }) => {
   return (
-    <section className="statistics">
-      {title && <h2 className="title">{title}</h2>}
-
+    <Section className="statistics" title={title}>
       <StatisticsList statisticsData={data} />
-    </section>
+    </Section>
   );
 };
 

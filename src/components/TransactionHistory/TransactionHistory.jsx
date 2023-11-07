@@ -1,28 +1,37 @@
 import { TransactionItem } from './TransactionItem/TransactionItem';
 import PropTypes from 'prop-types';
+import { Section } from '../Common/Section';
+import {
+  Table,
+  TableCell,
+  TableHead,
+  TableRow,
+} from './TransactionHistory.style';
 
 export const TransactionHistory = ({ items }) => {
   return (
-    <table className="transaction-history">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
-        </tr>
-      </thead>
+    <Section>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Type</TableCell>
+            <TableCell>Amount</TableCell>
+            <TableCell>Currency</TableCell>
+          </TableRow>
+        </TableHead>
 
-      <tbody>
-        {items.map(({ id, type, amount, currency }) => (
-          <TransactionItem
-            key={id}
-            type={type}
-            amount={amount}
-            currency={currency}
-          />
-        ))}
-      </tbody>
-    </table>
+        <tbody>
+          {items.map(({ id, type, amount, currency }) => (
+            <TransactionItem
+              key={id}
+              type={type}
+              amount={amount}
+              currency={currency}
+            />
+          ))}
+        </tbody>
+      </Table>
+    </Section>
   );
 };
 

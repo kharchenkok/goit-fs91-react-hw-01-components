@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import css from '../Profile.module.css';
 
 export const ProfileStatsItem = ({ title, value }) => (
-  <li className={css.item}>
-    <span className={css.label}>{title}</span>
-    <span className={css.quantity}>{value}</span>
+  <li className="item">
+    <span className="quantity">{value}</span>
+    <span className="label">{title}</span>
   </li>
 );
 

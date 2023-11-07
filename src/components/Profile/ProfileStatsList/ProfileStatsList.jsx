@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import { ProfileStatsItem } from '../ProfileStatsItem/ProfileStatsItem';
-import css from '../Profile.module.css';
+import { StatsList } from './StatsList.style';
 
 export const ProfileStatsList = ({ stats }) => {
   return (
-    <ul className={css.statsList}>
+    <StatsList>
       {Object.entries(stats).map(([key, value]) => (
         <ProfileStatsItem key={key} title={key} value={value} />
       ))}
-    </ul>
+    </StatsList>
   );
 };
 

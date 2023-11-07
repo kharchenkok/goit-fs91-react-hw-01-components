@@ -1,18 +1,22 @@
 import PropTypes from 'prop-types';
 import { ProfileDescription } from './ProfileDescription/ProfileDescription';
 import { ProfileStatsList } from './ProfileStatsList/ProfileStatsList';
+import { Section } from '../Common/Section';
+import { UserCard } from './Profile.style';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <>
-      <ProfileDescription
-        username={username}
-        avatar={avatar}
-        tag={tag}
-        location={location}
-      />
-      <ProfileStatsList stats={stats} />
-    </>
+    <Section>
+      <UserCard>
+        <ProfileDescription
+          username={username}
+          avatar={avatar}
+          tag={tag}
+          location={location}
+        />
+        <ProfileStatsList stats={stats} />
+      </UserCard>
+    </Section>
   );
 };
 
